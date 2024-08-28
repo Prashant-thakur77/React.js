@@ -7,9 +7,13 @@ function App() {
   const[numberAllowed,setNumberAllowed]=useState(false)
   const[charAllowed,setCharAllowed]=useState(false)
   const[password,setPassword]=useState("")
+  
 
   //use ref
   const passwordRef=useRef(null)
+
+
+
 
 
 
@@ -33,8 +37,19 @@ const copyPasswordToClipboard=useCallback(()=>{
   passwordRef.current?.select();
   passwordRef.current?.setSelectionRange(0,101);
   window.navigator.clipboard.writeText(password)
+  
+
+  
 
 },[password])
+
+const changeStyle=()=>{
+
+}
+
+
+
+
 
 
 useEffect(()=>{
@@ -59,7 +74,8 @@ useEffect(()=>{
          />
          <button 
          onClick={copyPasswordToClipboard}
-         className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">copy</button>
+         
+         className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 hover:bg-blue-200 hover:text-blue-900 active:bg-white active:text-black ">copy</button>
       </div>
       <div className="flex text-sm gap-x-2">
         <div className='flex items-center gap-x-1'>
