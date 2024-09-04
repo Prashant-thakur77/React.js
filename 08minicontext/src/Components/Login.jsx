@@ -2,7 +2,7 @@ import React,{useState,useContext} from 'react'
 import UserContext from '../context/userContext'
 
 function Login() {
-  const{username,setUsername}= useState('')
+  const[username,setUsername]= useState('')
   const [password, setPassword] = useState('')
 
 
@@ -19,10 +19,11 @@ function Login() {
       <input type='text'
       value={username}
       onChange={(e)=> setUsername(e.target.value)} placeholder='username'/>
+      {" "}
       <input type='text'
       value={username}
       onChange={(e)=> setPassword(e.target.value)} placeholder='password '/>
-      <button onClick={handleSubmit}></button>
+      <button onClick={handleSubmit}> Submit</button>
 
     </div>
   )
