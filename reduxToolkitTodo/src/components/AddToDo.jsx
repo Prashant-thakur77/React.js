@@ -4,13 +4,13 @@ import {useDispatch} from 'react-redux'
 
 import {addTodo} from '../feature/todo/todoSlice'
 function AddToDo() {
-  const [input, setinput] = useState('')
+  const [input, setInput] = useState('')
   const dispatch=useDispatch()
 
   const addTodoHandler=(e)=>{
     e.preventDefault()
     dispatch(addTodo(input))
-    setinput('')
+    setInput('')
   }
 
   return (
