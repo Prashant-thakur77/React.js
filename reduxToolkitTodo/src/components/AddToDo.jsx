@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux'
 import {addTodo} from '../feature/todo/todoSlice'
 function AddToDo() {
   const [input, setInput] = useState('')
+  
   const dispatch=useDispatch()
 
   const addTodoHandler=(e)=>{
@@ -21,6 +22,8 @@ function AddToDo() {
         placeholder="Enter a Todo..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        
+        
       />
       <button
         type="submit"

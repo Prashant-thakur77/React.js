@@ -1,9 +1,20 @@
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { removeTodo } from '../feature/todo/todoSlice'
+import { useState } from 'react'
 function Todos() {
 
+
   const todos=useSelector(state=>state.todos)
+  const hello=todos[0];
+  console.log(hello)
+  
+
+  
+  
+  const [todoMsg, settodoMsg] = useState(todos.text
+)
+console.log(todos)
 
   const dispatch=useDispatch()
   return (
@@ -11,11 +22,35 @@ function Todos() {
     <div>Todos</div>
     <ul className="list-none">
         {todos.map((todo) => (
+          
           <li
             className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
             key={todo.id}
           >
             <div className='text-white'>{todo.text}</div>
+            <input
+              type="text"
+              className={`border outline-none w-full bg-transparent rounded-lg 
+              "border-blue-600/10 px-2"
+               ${todo.completed ? "line-through" : ""}`}
+              value={todoMsg}
+              onChange={(e) => settodoMsg(e.target.value)}
+              
+          />
+          {/* Edit, Save Button */}
+          {/*<button
+              className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
+              onClick={() => {
+                  if (todo.completed) return;
+
+                  if (isTodoEditable) {
+                      editTodo();
+                  } else setIsTodoEditable((prev) => !prev);
+              }}
+              disabled={todo.completed}
+          >
+              {isTodoEditable ? "📁" : "✏️"}
+          </button>*/}
             <button
              onClick={() => dispatch(removeTodo(todo.id))}
               className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
