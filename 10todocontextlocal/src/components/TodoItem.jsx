@@ -37,7 +37,7 @@ function TodoItem({todo}) {
           <input
               type="text"
               className={`border outline-none w-full bg-transparent rounded-lg ${
-                  isTodoEditable ? "border-black/10 px-2" : "border-transparent"
+                  isTodoEditable ?"border-white px-2" : "border-transparent"
               } ${todo.completed ? "line-through" : ""}`}
               value={todoMsg}
               onChange={(e) => setTodoMsg(e.target.value)}
@@ -45,7 +45,7 @@ function TodoItem({todo}) {
           />
           {/* Edit, Save Button */}
           <button
-              className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
+              className="inline-flex w-8 h-8 rounded-lg text-sm border text-white border-white justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
               onClick={() => {
                   if (todo.completed) return;
 
