@@ -1,9 +1,10 @@
 
 import React,{ useState ,useEffect} from 'react'
 import './App.css'
-import useDispatch from 'react-redux'
-import AuthService from './appwrite/auth';
+import { useDispatch } from 'react-redux';
+import authService from './appwrite/auth.js';
 import {logIn, logOut } from './store/authSlice';
+
 
 
 
@@ -13,7 +14,7 @@ function App() {
 const dispatch=useDispatch()
 
 useEffect(()=>{
-  AuthService.getCurrentUser()
+  authService.getCurrentUser()
   .then((userData)=>{
     if(userData){
       dispatch(logIn({userData}))
@@ -26,7 +27,17 @@ useEffect(()=>{
 
 },[])
 
- return !loading?(<div className='min-h-sc'></div>
+ return !loading?(<div className='min-h-screen flex flex-wrap content-between bg-gray-400 '>
+  <div className='w-full block'>
+    <Header/>
+    <main>
+     {/*TODO     <Outlet/>*/}
+    </main>
+
+    <Footer/>
+  </div>
+
+ </div>
 
  ): (null)
 }

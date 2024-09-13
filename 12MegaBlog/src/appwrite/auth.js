@@ -43,7 +43,7 @@ export class AuthService{
     
   }
 
-  async getCurrenUser(){
+  async getCurrentUser(){
     try{
       return await this.account.get();
 
@@ -72,5 +72,5 @@ export class AuthService{
 }
 const authService= new AuthService();
 
-export default AuthService;
+export default authService;
 
