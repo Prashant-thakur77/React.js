@@ -7,18 +7,20 @@ import React from 'react'
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import { AuthLayout, Login, Signup } from './components/index.js'
+import { AuthLayout, Login } from './components/index.js'
 import AllPosts from './pages/AllPosts.jsx'
 import AddPost from './pages/AddPost.jsx'
 import EditPost from './pages/EditPost.jsx'
+import Signup from './pages/Signup.jsx'
+import Post from './pages/Post.jsx'
 
 const router = createBrowserRouter([
   {
-    path:'/',
+    path:"/",
     element: <App/>,
     children:[
       {
-        path:'/',
+        path:"/",
         element:<Home/>,
       },
       {
@@ -63,6 +65,10 @@ const router = createBrowserRouter([
             <EditPost/>
           </AuthLayout>
         )
+      },
+      {
+        path:"/post/:slug",
+        element: <Post />
       }
     ]
   }
