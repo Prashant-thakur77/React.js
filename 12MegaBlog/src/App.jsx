@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth.js';
 import {logIn, logOut } from './store/authSlice';
 import {Header,Footer} from './components/index.js'
+import { Outlet } from 'react-router-dom'
 
 
 
@@ -32,7 +33,7 @@ useEffect(()=>{
   <div className='w-full block'>
     <Header/>
     <main>
-     {/*TODO     <Outlet/>*/}
+     TODO:     <Outlet/>
     </main>
 
     <Footer/>
