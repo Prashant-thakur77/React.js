@@ -17,54 +17,54 @@ import Post from './pages/Post.jsx'
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <App/>,
+    element: <App />,
     children:[
       {
         path:"/",
-        element:<Home/>,
+        element:<Home />,
       },
       {
         path:"/login",
         element:(
           <AuthLayout authentication={false}>
-            <Login/>
+            <Login />
           </AuthLayout>
-        )
+        ),
       },
       {
         path:"/signup",
         element:(
           <AuthLayout authentication={false}>
-            <Signup/>
+            <Signup />
           </AuthLayout>
-        )
+        ),
       },
       {
         path:"/all-posts",
         element:(
           <AuthLayout authentication>
             {" "}
-            <AllPosts/>
+            <AllPosts />
           </AuthLayout>
-        )
+        ),
       },
       {
         path:"/add-post",
         element:(
           <AuthLayout authentication>
             {" "}
-            <AddPost/>
+            <AddPost />
           </AuthLayout>
-        )
+        ),
       },
       {
         path:"/edit-post/:slug",
         element:(
           <AuthLayout authentication>
             {" "}
-            <EditPost/>
+            <EditPost />
           </AuthLayout>
-        )
+        ),
       },
       {
         path:"/post/:slug",

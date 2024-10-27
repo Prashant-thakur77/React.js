@@ -3,7 +3,7 @@ import React,{ useState ,useEffect} from 'react'
 import './App.css'
 import { useDispatch } from 'react-redux';
 import authService from './appwrite/auth.js';
-import {logIn, logOut } from './store/authSlice';
+import {login, logout } from './store/authSlice';
 import {Header,Footer} from './components/index.js'
 import  {Outlet}  from 'react-router-dom'
 
@@ -19,9 +19,9 @@ useEffect(()=>{
   authService.getCurrentUser()
   .then((userData)=>{
     if(userData){
-      dispatch(logIn({userData}))
+      dispatch(login({userData}))
     }else{
-      dispatch(logOut())
+      dispatch(logout())
     }
 
   })
