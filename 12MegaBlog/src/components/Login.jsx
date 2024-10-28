@@ -11,22 +11,22 @@ function Login() {
   const dispatch=useDispatch()
   const {register,handleSubmit}=useForm()
   const[error,setError]=useState("")
-  const login=async(data)=>{
-    setError("")
-    try{
-      const session=await authService.login(data)
-      if(session){
-        const userData=await authService.getCurrentUser()
-        if(userData) dispatch(authLogin(userData))
-        navigate("/")
-
-        
+  const login = async (data) => {
+    setError("");
+    try {
+      const session = await authService.login(data);
+      console.log("Session:", session); // Debug session object
+      if (session) {
+        const userData = await authService.getCurrentUser();
+        console.log("User Data:", userData); // Debug user data object
+        if (userData) dispatch(authLogin(userData));
+        navigate("/");
       }
-
-    }catch(error){
-      setError(error.message)
+    } catch (error) {
+      setError(error.message);
     }
-  }
+  };
+  
 
 
   return (
