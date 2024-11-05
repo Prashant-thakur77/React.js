@@ -3,13 +3,14 @@ import { Client, ID, Databases, Storage, Query } from "appwrite";
 
 export class Service{
     client = new Client();
+    
     databases;
     bucket;
     
     constructor(){
         this.client
-        .setEndpoint(conf.appwriteUrl)
-        .setProject(conf.appwriteProjectId);
+        .setEndpoint("https://cloud.appwrite.io/v1")
+        .setProject("66e304a4003ca0ef4c89");
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
     }
@@ -26,7 +27,7 @@ export class Service{
                     featuredImage,
                     status,
                     userId,
-                }
+                },['*']
             )
         } catch (error) {
             console.log("Appwrite serive :: createPost :: error", error);
