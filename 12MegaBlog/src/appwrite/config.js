@@ -27,7 +27,7 @@ export class Service{
                     featuredImage,
                     status,
                     userId,
-                },['*']
+                }
             )
         } catch (error) {
             console.log("Appwrite serive :: createPost :: error", error);
